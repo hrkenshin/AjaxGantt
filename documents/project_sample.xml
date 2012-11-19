@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project uid="String" xsi:noNamespaceSchemaLocation="Gantt_Schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <name>String</name>
+  <subject>String</subject>
+  <category>String</category>
+  <description>String</description>
+  <author>String</author>
+  <creationDate>2001-12-17T09:30:47Z</creationDate>
+  <updatedDate>2001-12-17T09:30:47Z</updatedDate>
+  <startDate>1967-08-13</startDate>
+  <finishDate>1967-08-13</finishDate>
+  <status>String</status>
+  <Tasks>
+    <Task parent="String" seqNo="String" from="String" uid="String" to="String" wbsLevel="0" isLeaf="true">
+      <title>String</title>
+      <type>String</type>
+      <startDate>1967-08-13</startDate>
+      <endDate>1967-08-13</endDate>
+      <duration>P1Y2M3DT10H30M</duration>
+      <description>String</description>
+      <status>String</status>
+      <priority>0</priority>
+      <resources>String</resources>
+      <completeRate>0</completeRate>
+    </Task>
+    <Task parent="String" seqNo="String" from="String" uid="String" to="String" wbsLevel="0" isLeaf="true">
+      <title>String</title>
+      <type>String</type>
+      <startDate>1967-08-13</startDate>
+      <endDate>1967-08-13</endDate>
+      <duration>P1Y2M3DT10H30M</duration>
+      <description>String</description>
+      <status>String</status>
+      <priority>0</priority>
+      <resources>String</resources>
+      <completeRate>0</completeRate>
+    </Task>
+  </Tasks>
+</Project>

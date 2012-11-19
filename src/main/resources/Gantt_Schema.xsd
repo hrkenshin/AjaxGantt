@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Admin (MSM) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Project" type="ProjectType">
+		<xs:annotation>
+			<xs:documentation>최상위 레벨 Project 엘리먼트</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Task" type="TaskType">
+		<xs:annotation>
+			<xs:documentation>Task 엘리먼트</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ProjectType">
+		<xs:annotation>
+			<xs:documentation>Project Complex Type</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>프로젝트명</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subject" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>주제</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="category" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>카테고리</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>상세설명</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="author" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>작성자</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="creationDate" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>생성시간</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="updatedDate" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>갱신시간</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="startDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>프로젝트 시작일</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="finishDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>프로젝트 종료일</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="status" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Project 상태(진행중, 완료)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:sequence>
+				<xs:element name="Tasks" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="Task" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute name="uid" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Project ID</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TaskType">
+		<xs:annotation>
+			<xs:documentation>Task Complex Type</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="title" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Task 제목</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="type" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Task 유형(일반, 요약, 중요시점)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="startDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Task 시작일</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="endDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Task 종료일</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="duration" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>기간(일)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Task 설명</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="status" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Task 상태(진행중, 완료)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priority" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Task 우선순위(1~10)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="resources" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Task에 할당된 Resources</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="completeRate" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Task 완료률</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="uid" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Task ID</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="seqNo" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Task 그리드상에서의 Task 순서</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="parent" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>부모 Task ID</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="from" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>선행 Task ID(콤마로 구분)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="to" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>후행 Task ID(콤마로 구분)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="wbsLevel" type="xs:int">
+			<xs:annotation>
+				<xs:documentation>Task의 노드 위치상 레벨(0 이면 최상위)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="isLeaf" type="xs:boolean">
+			<xs:annotation>
+				<xs:documentation>마지막노드인지 여부</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>
